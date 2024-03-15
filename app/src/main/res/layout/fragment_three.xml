@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:id="@+id/id_fragment_3_container"
-    tools:context=".FragmentThree">
+    tools:context=".view.fragments.FragmentThree">
 
     <TextView
         android:layout_width="match_parent"

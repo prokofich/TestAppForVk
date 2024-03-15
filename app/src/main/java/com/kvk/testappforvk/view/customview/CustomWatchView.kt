@@ -1,4 +1,4 @@
-package com.kvk.testappforvk.view
+package com.kvk.testappforvk.view.customview
 
 import android.content.Context
 import android.graphics.Canvas

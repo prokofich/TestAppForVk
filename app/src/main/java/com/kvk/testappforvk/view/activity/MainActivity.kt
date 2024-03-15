@@ -1,10 +1,14 @@
-package com.kvk.testappforvk
+package com.kvk.testappforvk.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.kvk.testappforvk.R
+import com.kvk.testappforvk.view.fragments.FragmentOne
+import com.kvk.testappforvk.view.fragments.FragmentThree
+import com.kvk.testappforvk.view.fragments.FragmentTwo
 
 class MainActivity : AppCompatActivity() {
 

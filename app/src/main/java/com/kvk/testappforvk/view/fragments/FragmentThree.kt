@@ -1,14 +1,12 @@
-package com.kvk.testappforvk
+package com.kvk.testappforvk.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintSet
 import com.kvk.testappforvk.databinding.FragmentThreeBinding
-import com.kvk.testappforvk.databinding.FragmentTwoBinding
-import com.kvk.testappforvk.view.CustomWatchView
+import com.kvk.testappforvk.view.customview.CustomWatchView
 
 class FragmentThree : Fragment() {
 
