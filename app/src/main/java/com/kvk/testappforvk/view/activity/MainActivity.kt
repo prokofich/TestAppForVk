@@ -3,18 +3,16 @@ package com.kvk.testappforvk.view.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.kvk.testappforvk.R
-import com.kvk.testappforvk.view.fragments.FragmentOne
-import com.kvk.testappforvk.view.fragments.FragmentThree
-import com.kvk.testappforvk.view.fragments.FragmentTwo
+import com.kvk.testappforvk.databinding.ActivityMainBinding
+import com.kvk.testappforvk.view.MAIN
 
 class MainActivity : AppCompatActivity() {
 
-    private val fragmentOne = FragmentOne()
-    private val fragmentTwo = FragmentTwo()
-    private val fragmentThree = FragmentThree()
+    private var binding: ActivityMainBinding? = null
+    private var navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,24 +20,18 @@ class MainActivity : AppCompatActivity() {
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        val navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        MAIN = this
+        navController = Navigation.findNavController(this, R.id.fragment_container)
 
-        replaceFragment(fragmentOne)
-        navigation.setOnNavigationItemSelectedListener {
+        binding?.bottomNavigation?.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.id_menu_1 ->replaceFragment(fragmentOne)
-                R.id.id_menu_2 ->replaceFragment(fragmentTwo)
-                R.id.id_menu_3 ->replaceFragment(fragmentThree)
+                R.id.id_menu_1 -> navController?.navigate(R.id.fragmentOne)
+                R.id.id_menu_2 -> navController?.navigate(R.id.fragmentTwo)
+                R.id.id_menu_3 -> navController?.navigate(R.id.fragmentThree)
             }
             true
         }
 
-    }
-
-    private fun replaceFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container,fragment)
-        transaction.commit()
     }
 
 }
