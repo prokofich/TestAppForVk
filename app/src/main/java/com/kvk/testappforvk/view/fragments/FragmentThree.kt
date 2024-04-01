@@ -24,7 +24,7 @@ class FragmentThree : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val customWatchView = CustomWatchView(requireContext())
-        val params = ViewGroup.LayoutParams(dpToPx(200), dpToPx(200))
+        val params = ViewGroup.LayoutParams(dpToPx(), dpToPx())
         customWatchView.id = View.generateViewId()
         customWatchView.layoutParams = params
         binding?.idFragment3Container?.addView(customWatchView)
@@ -36,9 +36,9 @@ class FragmentThree : Fragment() {
         binding = null
     }
 
-    fun dpToPx(dp: Int): Int {
+    private fun dpToPx(): Int {
         val density = resources.displayMetrics.density
-        return (dp * density).toInt()
+        return (200 * density).toInt()
     }
 
 }
