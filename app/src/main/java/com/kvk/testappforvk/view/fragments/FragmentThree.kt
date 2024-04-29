@@ -36,7 +36,7 @@ class FragmentThree : Fragment() {
         binding = null
     }
 
-    private fun dpToPx(): Int {
+    private fun dpToPx() : Int {
         val density = resources.displayMetrics.density
         return (200 * density).toInt()
     }

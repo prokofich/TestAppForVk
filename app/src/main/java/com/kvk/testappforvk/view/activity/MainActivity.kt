@@ -2,7 +2,6 @@ package com.kvk.testappforvk.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.kvk.testappforvk.R
@@ -17,8 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         MAIN = this
         navController = Navigation.findNavController(this, R.id.fragment_container)
